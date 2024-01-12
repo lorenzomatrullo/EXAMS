@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Lorenzo Matrullo">
+    <meta name="description" content="Presentazione del programma Agenda.">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiegazione del Programma C</title>
+</head>
+
+<p style="text-align:center;">
+	<img align="middle" src="imgs/uni-parthenope.png" width="425">
+</p>
+
+<body>
+    <h2 align="center">Relazione di Programmazione I & Laboratorio Programmazione I</h2>
+	<h3 align="center">A.A. 2023-2024</h3>
+	<h4 align="center">Studente: Matrullo Lorenzo</h4>
+    <h4 align="center">Matricola: 0124003050</h4>
+
+    <br>
+
+    <h1>Spiegazione del Programma C</h1>
+
+    <hr>
+
+    <br>
+    
+    <h2>Introduzione</h2>
+    <p>Il programma in C fornisce una simulazione di un gioco che prevede un'auto su un percorso che deve evitare gli ostacoli. 
+        <br>L’auto deve evitare automaticamente gli ostacoli che incontra durante il percorso.<br>
+        Gli ostacoli vengono creati ad ogni passo in una posizione casuale, ad ogni turno l’auto viene spostata automaticamente a destra o sinistra.
+    </p>
+    
+    
+    <br>
+
+    <h2>Struttura del Codice</h2>
+    <p>Il codice è strutturato in diverse parti:</p>
+    <ul>
+        <li><strong>Definizioni:</strong> Vengono definiti i valori costanti e la struttura dell'appuntamento.</li>
+        <li><strong>Prototipi delle Funzioni:</strong> Vengono dichiarati i prototipi delle funzioni.</li>
+        <li><strong>Array di Nomi per le Categorie:</strong> Viene definito un array di stringhe per le categorie.</li>
+        <li><strong>Funzione Main:</strong> Punto di ingresso del programma.</li>
+        <li><strong>Funzioni Operative:</strong> Le funzioni per aggiungere appuntamenti, calcolare ore per categoria e descrivere statistiche.</li>
+    </ul>
+
+    <h3>Visualizza il Codice</h3>
+    <a href="https://gist.github.com/lorenzomatrullo/7545b6afa08a1a7b3c0497c3de45253b" target="_blank">
+        <button>Source Code</button>
+    </a>
+
+    <br></body>
+    <hr>
+
+    <h2>Esecuzione del Programma</h2>
+    <img src="imgs/Tavola-di-Gioco.png" alt="Tavola di Gioco">
+    <p>Nel codice, la funzione <code>inizializzaGriglia()</code> imposta la griglia di gioco, posizionando il giocatore inizialmente al centro inferiore e generando due ostacoli nella parte superiore.</p>
+    
+    <br>
+    <hr>
+
+    <h2>Movimento</h2>
+    <img src="imgs/Passo-1.png" alt="Passo 1">
+    <img src="imgs/Passo-2.png" alt="Passo 2">
+    <img src="imgs/Passo-3.png" alt="Passo 3">
+    <img src="imgs/Passo-4.png" alt="Passo 4">
+    <p>
+        Le funzioni <code>muoviGiocatore()</code> e <code>muoviOstacolo()</code> gestiscono il movimento del giocatore e degli ostacoli.
+        <br>La funzione <code>eseguiPartita()</code> è la parte principale del gioco, dove il giocatore e gli ostacoli si muovono e vengono controllate le collisioni.
+    </p>
+    
+    <br>
+    <hr>
+
+    <h2>Momento della Collisione</h2>
+    <img src="imgs/Collisione.png" alt="Momento della Collisione">
+    <p>La funzione <code>controllaCollisione()</code> controlla per ogni passo effettuato se il giocatore ha colliso l'ostacolo, e se ciò è vero la partita finisce.</p>
+
+
+    <br>
+    <hr>
+
+    <h2>Passi Terminati</h2>
+    <img src="imgs/Passo-100.png" alt="Passi terminati">
+    <p>Se la funzione <code>controllaCollisione()</code> fino alla fine dei 100 passi non ha trovato che il giocatore abbia colliso l'ostacolo, la partita finisce.</p>
+
+    <br>
+    <hr>
+
+    <h2>Conclusioni</h2>
+    <p>Il progromma GIOCO AUTO attravero una serie di efficienti funzioni di <code>Inizializzazione</code>, <code>Generazione</code>, <code>Movimento</code> e <code>Controllo</code> permette all'utente di aver un esperienza di massimo 100 passi per partita, a meno che non avvenga una collisione tra giocatore e ostacolo.</p>
+</body>
+</html>
