@@ -6,6 +6,7 @@ const char VUOTO = ' ';
 const char GIOCATORE = 'P';
 const char OSTACOLO = 'O';
 
+// Inizializza la griglia del gioco, posiziona il giocatore e alcuni ostacoli iniziali.
 void inizializzaGriglia() {
     for (int i = 0; i < ALTEZZA_GRIGLIA; i++) {
         for (int j = 0; j < LARGHEZZA_GRIGLIA; j++) {
@@ -25,6 +26,8 @@ void inizializzaGriglia() {
         griglia[0][colonnaOstacolo2] = OSTACOLO;
 }
 
+
+// Genera casualmente un ostacolo nella parte superiore della griglia.
 void generaOstacolo() {
     int colonnaOstacolo = rand() % LARGHEZZA_GRIGLIA;
 
@@ -32,6 +35,8 @@ void generaOstacolo() {
         griglia[0][colonnaOstacolo] = OSTACOLO;
 }
 
+
+// Muove il giocatore a sinistra o a destra in modo casuale.
 void muoviGiocatore() {
     int rigaGiocatore, colonnaGiocatore;
 
@@ -56,6 +61,8 @@ void muoviGiocatore() {
         griglia[ALTEZZA_GRIGLIA - 1][colonnaGiocatore] = GIOCATORE;
 }
 
+
+// Muove gli ostacoli verso il basso nella griglia.
 void muoviOstacolo() {
     for (int i = ALTEZZA_GRIGLIA - 1; i >= 0; i--) {
         for (int j = 0; j < LARGHEZZA_GRIGLIA; j++) {
@@ -73,12 +80,16 @@ void muoviOstacolo() {
     }
 }
 
+
+// Controlla se c'è una collisione tra il giocatore e un ostacolo nella posizione corrente.
 int controllaCollisione() {
     if (ALTEZZA_GRIGLIA > 0 && LARGHEZZA_GRIGLIA / 2 >= 0 && LARGHEZZA_GRIGLIA / 2 < LARGHEZZA_GRIGLIA)
         return (griglia[ALTEZZA_GRIGLIA - 1][LARGHEZZA_GRIGLIA / 2] == OSTACOLO);
     return 0;
 }
 
+
+// Stampa la griglia del gioco a schermo, inclusi il giocatore e gli ostacoli.
 void stampaGriglia() {
     system(CLEAR_SCREEN);
 
@@ -120,6 +131,8 @@ void stampaGriglia() {
     printf("-%s\n", COLORE_RESET);
 }
 
+
+// Esegue una partita del gioco, gestendo i movimenti del giocatore e degli ostacoli.
 void eseguiPartita() {
     int passi = 0;
 

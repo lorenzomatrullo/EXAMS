@@ -21,10 +21,14 @@
 #define LINEA_ORIZZONTALE "-----"
 #define LINEA_VERTICALE "|"
 
+
+// Simboli per rappresentare i tipi di cella nella griglia del gioco.
 extern const char VUOTO;
 extern const char GIOCATORE;
 extern const char OSTACOLO;
 
+
+// Funzioni definite nel file gioco.c
 void inizializzaGriglia();
 void generaOstacolo();
 void muoviGiocatore();
